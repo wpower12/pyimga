@@ -1,11 +1,11 @@
-from imgga import imgga
+from imgga import TreeBasedRepresentation
 from PIL import Image
 
 MAX_DEPTH = 7
 
-f1 = imgga.make_individual(MAX_DEPTH)
-f2 = imgga.make_individual(MAX_DEPTH)
-f3 = imgga.make_individual(MAX_DEPTH)
+f1 = TreeBasedRepresentation.make_individual(MAX_DEPTH)
+f2 = TreeBasedRepresentation.make_individual(MAX_DEPTH)
+f3 = TreeBasedRepresentation.make_individual(MAX_DEPTH)
 
 size = (256, 256)
 X, Y = size

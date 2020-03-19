@@ -1,6 +1,8 @@
 import math
 import random
+from PIL import Image, ImageDraw, ImageColor
 
+# - "Tree Based" Representation
 MULT_SCALE = 1.0
 SIN_SCALE = 1.5
 COS_SCALE = 1.5
@@ -17,7 +19,8 @@ ATOMS = [["A", 2],  # Add
          ["Y", 1]]
 TERMINALS = ["X", "Y"]  # Inputs are the terminals
 
-class node:
+
+class TreeNode:
 
     def __init__(self, kind):
         self.kind = kind
@@ -63,14 +66,13 @@ class node:
 def make_individual(remaining_depth):
     if remaining_depth == 0:
         kind = random.choice(TERMINALS)
-        return node(kind)
+        return TreeNode(kind)
     else:
         kind, num_params = random.choice(ATOMS)
-
         if kind in TERMINALS:
-            return node(kind)
+            return TreeNode(kind)
         else:
-            n = node(kind)
+            n = TreeNode(kind)
             for i in range(num_params):
                 n.children.append(make_individual(remaining_depth - 1))
             return n
