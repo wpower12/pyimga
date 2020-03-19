@@ -72,9 +72,9 @@ def make_individual(num_instructions, max_h, max_w):
 
         if kind == "L":
             x1 = random.randrange(0, max_w - 1)
-            x2 = random.randrange(x1 + 1, max_w)
+            x2 = random.randrange(0, max_w)
             y1 = random.randrange(0, max_h - 1)
-            y2 = random.randrange(y1 + 1, max_h)
+            y2 = random.randrange(0, max_h)
             width = random.randint(1,10)
             ind.instruction_list.append(["L", ((x1, y1), (x2, y2)), width, random_color()])
 
